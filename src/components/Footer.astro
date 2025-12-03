@@ -1,0 +1,52 @@
+---
+const year = new Date().getFullYear();
+const { lang = "en" } = Astro.props;
+---
+
+<footer
+    class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8"
+>
+    <hr class="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
+    <div class="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
+        <div class="flex flex-col space-y-4">
+            <a
+                href={`/${lang}`}
+                class="text-gray-500 hover:text-gray-600 transition">Home</a
+            >
+            <a
+                href={`/${lang}/philosophy`}
+                class="text-gray-500 hover:text-gray-600 transition"
+                >Philosophy</a
+            >
+            <a
+                href={`/${lang}/resume`}
+                class="text-gray-500 hover:text-gray-600 transition">Resume</a
+            >
+            <a
+                href={`/${lang}/projects`}
+                class="text-gray-500 hover:text-gray-600 transition">Projects</a
+            >
+        </div>
+        <div class="flex flex-col space-y-4">
+            <a
+                href="https://twitter.com/achirinos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-500 hover:text-gray-600 transition">Twitter</a
+            >
+            <a
+                href="https://linkedin.com/in/achirinos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-500 hover:text-gray-600 transition">LinkedIn</a
+            >
+            <a
+                href="mailto:achirinos@gmail.com"
+                class="text-gray-500 hover:text-gray-600 transition">Email</a
+            >
+        </div>
+        <div class="flex flex-col space-y-4">
+            <p class="text-gray-500">© {year} Asdrúbal Chirinos</p>
+        </div>
+    </div>
+</footer>

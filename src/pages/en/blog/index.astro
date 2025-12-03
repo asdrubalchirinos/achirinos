@@ -1,0 +1,35 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout title="Writing">
+    <h1 class="font-medium text-2xl mb-8 tracking-tighter">read my writing</h1>
+    <div class="flex flex-col space-y-4">
+        {
+            posts.map((post) => (
+                <a
+                    href={`/blog/${post.slug}`}
+                    class="flex flex-col space-y-1 mb-4 group"
+                >
+                    <div class="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+                        <p class="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                            {post.data.pubDate.toLocaleDateString("en-us", {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric",
+                            })}
+                        </p>
+                        <p class="text-neutral-900 dark:text-neutral-100 tracking-tight group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors">
+                            {post.data.title}
+                        </p>
+                    </div>
+                </a>
+            ))
+        }
+    </div>
+</Layout>
