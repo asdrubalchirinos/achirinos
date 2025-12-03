@@ -3,14 +3,14 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Resume">
-    <h1 class="font-medium text-2xl mb-8 tracking-tighter">resume</h1>
-    <div class="prose prose-neutral dark:prose-invert max-w-none">
-        <h2>Asdrúbal Chirinos</h2>
-        <p class="text-neutral-500">
+    <h1 class="font-bold text-3xl mb-12 tracking-tight">resume</h1>
+    <div class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        <h2 class="font-bold text-2xl mb-4">Asdrúbal Chirinos</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8">
             Vision Architect | Bridging Business and Code for Success.
         </p>
 
-        <p>
+        <p class="text-lg leading-relaxed mb-8">
             With over 30 years of experience, I have dedicated my career to
             bridging the gap between business vision and technical execution. As
             a Solution Architect and Vision Facilitator, my mission is to help
@@ -18,21 +18,23 @@ import Layout from "../../layouts/Layout.astro";
             reality.
         </p>
 
-        <h3>Experience</h3>
+        <h3 class="font-bold text-xl mt-12 mb-6">Experience</h3>
 
         <div class="mb-8">
-            <div class="flex justify-between items-baseline">
+            <div class="flex justify-between items-baseline mb-2">
                 <h4
-                    class="font-medium text-lg text-neutral-900 dark:text-neutral-100"
+                    class="font-bold text-lg text-neutral-900 dark:text-neutral-100"
                 >
                     PRODU
                 </h4>
                 <span class="text-neutral-500 text-sm">2018 – Present</span>
             </div>
-            <p class="text-neutral-600 dark:text-neutral-400 mb-2">
+            <p
+                class="text-base text-neutral-600 dark:text-neutral-400 mb-3 font-medium"
+            >
                 IT/Developer Manager
             </p>
-            <p>
+            <p class="text-lg leading-relaxed">
                 Acted as a Solution Architect, bridging business vision and
                 technical execution. Gathered strategic objectives from business
                 leaders and translated them into clear development requirements.
@@ -44,19 +46,21 @@ import Layout from "../../layouts/Layout.astro";
         </div>
 
         <div class="mb-8">
-            <div class="flex justify-between items-baseline">
+            <div class="flex justify-between items-baseline mb-2">
                 <h4
-                    class="font-medium text-lg text-neutral-900 dark:text-neutral-100"
+                    class="font-bold text-lg text-neutral-900 dark:text-neutral-100"
                 >
                     MANAGEMENT PLAZA
                 </h4>
                 <span class="text-neutral-500 text-sm">Jun 2015 – Jul 2018</span
                 >
             </div>
-            <p class="text-neutral-600 dark:text-neutral-400 mb-2">
+            <p
+                class="text-base text-neutral-600 dark:text-neutral-400 mb-3 font-medium"
+            >
                 Team Leader / Web Developer
             </p>
-            <p>
+            <p class="text-lg leading-relaxed">
                 Led cross-functional product development by translating business
                 requirements into actionable solutions. Recruited and
                 coordinated teams across SharePoint, EDI, and Ionic platforms.
@@ -66,19 +70,21 @@ import Layout from "../../layouts/Layout.astro";
         </div>
 
         <div class="mb-8">
-            <div class="flex justify-between items-baseline">
+            <div class="flex justify-between items-baseline mb-2">
                 <h4
-                    class="font-medium text-lg text-neutral-900 dark:text-neutral-100"
+                    class="font-bold text-lg text-neutral-900 dark:text-neutral-100"
                 >
                     BIT LEVER
                 </h4>
                 <span class="text-neutral-500 text-sm">Jun 2015 – Jul 2018</span
                 >
             </div>
-            <p class="text-neutral-600 dark:text-neutral-400 mb-2">
+            <p
+                class="text-base text-neutral-600 dark:text-neutral-400 mb-3 font-medium"
+            >
                 Full Stack Developer
             </p>
-            <p>
+            <p class="text-lg leading-relaxed">
                 Contributed to the early development of a contact center
                 platform integrating gamification, business intelligence, and
                 operational tools. Collaborated closely with the CEO and the
@@ -87,8 +93,10 @@ import Layout from "../../layouts/Layout.astro";
             </p>
         </div>
 
-        <h3>Skills</h3>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-none pl-0">
+        <h3 class="font-bold text-xl mt-12 mb-6">Skills</h3>
+        <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-3 list-none pl-0 text-lg"
+        >
             <li>Inspirational Leadership</li>
             <li>Effective Communication</li>
             <li>Solution Architecture</li>
@@ -99,13 +107,16 @@ import Layout from "../../layouts/Layout.astro";
             <li>Strategic Planning</li>
         </ul>
 
-        <h3>Contact</h3>
-        <p>
-            Email: <a href="mailto:achirinos@gmail.com">achirinos@gmail.com</a
+        <h3 class="font-bold text-xl mt-12 mb-6">Contact</h3>
+        <p class="text-lg leading-relaxed">
+            Email: <a
+                href="mailto:achirinos@gmail.com"
+                class="font-medium hover:underline">achirinos@gmail.com</a
             ><br />
             LinkedIn: <a
                 href="https://linkedin.com/in/achirinos"
-                target="_blank">linkedin.com/in/achirinos</a
+                target="_blank"
+                class="font-medium hover:underline">linkedin.com/in/achirinos</a
             ><br />
             Location: Aguascalientes, Mexico
         </p>
