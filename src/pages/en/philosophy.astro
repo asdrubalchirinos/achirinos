@@ -3,38 +3,44 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Philosophy">
-    <h1 class="font-medium text-2xl mb-8 tracking-tighter">philosophy</h1>
-    <article class="prose prose-neutral dark:prose-invert">
-        <p>
+    <h1 class="font-bold text-3xl mb-12 tracking-tight">philosophy</h1>
+    <article class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        <p class="text-lg leading-relaxed mb-6">
             Throughout our lives, we all face that crucial question: what is our
             mission in life? To be honest, it was only recently that I found the
             way to answer it.
         </p>
-        <blockquote>
+
+        <blockquote
+            class="border-l-4 border-neutral-300 dark:border-neutral-700 pl-6 my-8 italic text-xl"
+        >
             <p>
-                <em
-                    >My mission is to help build bridges between those who dream
-                    and those who do.</em
-                >
+                My mission is to help build bridges between those who dream and
+                those who do.
             </p>
         </blockquote>
-        <p>
+
+        <p class="text-lg leading-relaxed mb-6">
             Although I wasn't always consciously aware of it, this latent
             conviction is what certainly led me into the world of programming.
             The ability to solve problems and bring ideas to life is a challenge
             I have always found exciting and deeply satisfying.
         </p>
 
-        <h3>The Relationship Between Visionaries and Doers</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">
+            The Relationship Between Visionaries and Doers
+        </h2>
+        <p class="text-lg leading-relaxed mb-6">
             While Steve Jobs and Steve Wozniak are extraordinary examples of the
             relationship between visionaries and those who execute their ideas,
             the reality is much more complex. The key to success lies in an
             authentic and deep connection between vision and execution.
         </p>
 
-        <h3>Synergy Between Vision and Action</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">
+            Synergy Between Vision and Action
+        </h2>
+        <p class="text-lg leading-relaxed mb-6">
             For a vision to materialize, having a brilliant idea is not enough.
             Those who execute it must be completely convinced, committed, and
             inspired by the dreamer's vision. Without this commitment, they
@@ -44,41 +50,51 @@ import Layout from "../../layouts/Layout.astro";
             cannot become reality.
         </p>
 
-        <hr class="my-8" />
+        <hr class="my-12 border-neutral-200 dark:border-neutral-800" />
 
-        <h3>Start with Why</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">Start with Why</h2>
+        <p class="text-lg leading-relaxed mb-6">
             A few years ago, I came across Simon Sinek's book <em
                 >Start with Why</em
             >. Sinek proposes a simple but profound concept: the Golden Circle.
             This is a framework with three layers: What you do, How you do it,
             and most importantly, Why you do it.
         </p>
-        <p>
+
+        <p class="text-lg leading-relaxed mb-6">
             When I read this for the first time, it clicked immediately. In my
             years as a developer, I always felt the need to go beyond every
             requirement. I couldn't just complete tasks without understanding
             the purpose behind them.
         </p>
 
-        <h3>My Golden Circle</h3>
-        <ul>
+        <h2 class="font-bold text-2xl mt-12 mb-6">My Golden Circle</h2>
+        <ul class="space-y-6 mb-8">
             <li>
-                <strong>Why</strong>: I believe in closing the gap between
-                vision and execution. I exist to connect those who dream with
-                those who do, specifically between business and development,
-                discovering and amplifying the purpose behind every project.
+                <strong class="text-lg font-semibold">Why:</strong>
+                <span class="text-lg"
+                    >I believe in closing the gap between vision and execution.
+                    I exist to connect those who dream with those who do,
+                    specifically between business and development, discovering
+                    and amplifying the purpose behind every project.</span
+                >
             </li>
             <li>
-                <strong>How</strong>: I accompany product teams and companies to
-                identify the true <em>Why</em> of their requirements, and then communicate
-                it with clarity and impact. I work to make that purpose resonate
-                with developers and align everyone around a shared goal.
+                <strong class="text-lg font-semibold">How:</strong>
+                <span class="text-lg"
+                    >I accompany product teams and companies to identify the
+                    true <em>Why</em> of their requirements, and then communicate
+                    it with clarity and impact. I work to make that purpose resonate
+                    with developers and align everyone around a shared goal.</span
+                >
             </li>
             <li>
-                <strong>What</strong>: The result? Successful products, aligned
-                teams, and processes where business and code not only coexist
-                but advance together.
+                <strong class="text-lg font-semibold">What:</strong>
+                <span class="text-lg"
+                    >The result? Successful products, aligned teams, and
+                    processes where business and code not only coexist but
+                    advance together.</span
+                >
             </li>
         </ul>
     </article>
