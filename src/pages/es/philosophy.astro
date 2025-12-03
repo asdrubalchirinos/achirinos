@@ -3,21 +3,24 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Filosofía" lang="es">
-    <h1 class="font-medium text-2xl mb-8 tracking-tighter">filosofía</h1>
-    <article class="prose prose-neutral dark:prose-invert">
-        <p>
+    <h1 class="font-bold text-3xl mb-12 tracking-tight">filosofía</h1>
+    <article class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        <p class="text-lg leading-relaxed mb-6">
             A lo largo de nuestras vidas, todos nos enfrentamos a esa pregunta
             crucial: ¿cuál es nuestra misión en la vida? Siendo sincero, fue
             hace poco que encontré la forma de responderla.
         </p>
-        <blockquote>
+
+        <blockquote
+            class="border-l-4 border-neutral-300 dark:border-neutral-700 pl-6 my-8 italic text-xl"
+        >
             <p>
-                <em
-                    >Mi misión es ayudar a construir puentes entre aquellos que
-                    sueñan y aquellos que hacen.</em>
+                Mi misión es ayudar a construir puentes entre aquellos que
+                sueñan y aquellos que hacen.
             </p>
         </blockquote>
-        <p>
+
+        <p class="text-lg leading-relaxed mb-6">
             Aunque no siempre fui consciente de ella, fue esta convicción
             latente lo que con certeza me llevó hacia el mundo de la
             programación. La capacidad de resolver problemas y dar vida a ideas
@@ -25,16 +28,20 @@ import Layout from "../../layouts/Layout.astro";
             satisfactorio.
         </p>
 
-        <h3>La Relación entre Visionarios y Hacedores</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">
+            La Relación entre Visionarios y Hacedores
+        </h2>
+        <p class="text-lg leading-relaxed mb-6">
             Si bien Steve Jobs y Steve Wozniak son ejemplos extraordinarios de
             la relación entre los visionarios y quienes ejecutan sus ideas, la
             realidad es mucho más compleja. La clave del éxito radica en una
             conexión auténtica y profunda entre la visión y la ejecución.
         </p>
 
-        <h3>Sinergia entre Visión y Acción</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">
+            Sinergia entre Visión y Acción
+        </h2>
+        <p class="text-lg leading-relaxed mb-6">
             Para que una visión se materialice, no basta con tener una idea
             brillante. Aquellos que la ejecuten deben estar completamente
             convencidos, comprometidos e inspirados por la visión del soñador.
@@ -44,41 +51,51 @@ import Layout from "../../layouts/Layout.astro";
             no podrá concretarse en la realidad.
         </p>
 
-        <hr class="my-8" />
+        <hr class="my-12 border-neutral-200 dark:border-neutral-800" />
 
-        <h3>Empieza por el Por Qué</h3>
-        <p>
+        <h2 class="font-bold text-2xl mt-12 mb-6">Empieza por el Por Qué</h2>
+        <p class="text-lg leading-relaxed mb-6">
             Hace unos años, me topé con el libro <em>Start with Why</em> de Simon
             Sinek. Si no lo conoces, Sinek propone un concepto simple pero profundo:
             el Círculo Dorado. Este es un marco de trabajo con tres capas: Qué haces,
             Cómo lo haces y, lo más importante, Por Qué lo haces.
         </p>
-        <p>
+
+        <p class="text-lg leading-relaxed mb-6">
             Cuando leí esto por primera vez, me hizo click de inmediato. En mis
             años como desarrollador, siempre sentí la necesidad de ir más allá
             de cada requerimiento. No podía limitarme a cumplir tareas sin
             entender el propósito detrás.
         </p>
 
-        <h3>Mi Círculo Dorado</h3>
-        <ul>
+        <h2 class="font-bold text-2xl mt-12 mb-6">Mi Círculo Dorado</h2>
+        <ul class="space-y-6 mb-8">
             <li>
-                <strong>Por Qué</strong>: Creo en cerrar la brecha entre visión
-                y ejecución. Existo para conectar a los que sueñan con los que
-                hacen, específicamente entre negocio y desarrollo, descubriendo
-                y amplificando el propósito detrás de cada proyecto.
+                <strong class="text-lg font-semibold">Por Qué:</strong>
+                <span class="text-lg"
+                    >Creo en cerrar la brecha entre visión y ejecución. Existo
+                    para conectar a los que sueñan con los que hacen,
+                    específicamente entre negocio y desarrollo, descubriendo y
+                    amplificando el propósito detrás de cada proyecto.</span
+                >
             </li>
             <li>
-                <strong>Cómo</strong>: Acompaño a equipos de producto y empresas
-                a identificar el verdadero <em>Por Qué</em> de sus requerimientos,
-                y luego a comunicarlo con claridad e impacto. Trabajo para que ese
-                propósito resuene con los desarrolladores y alinee a todos en torno
-                a un objetivo compartido.
+                <strong class="text-lg font-semibold">Cómo:</strong>
+                <span class="text-lg"
+                    >Acompaño a equipos de producto y empresas a identificar el
+                    verdadero <em>Por Qué</em> de sus requerimientos, y luego a comunicarlo
+                    con claridad e impacto. Trabajo para que ese propósito resuene
+                    con los desarrolladores y alinee a todos en torno a un objetivo
+                    compartido.</span
+                >
             </li>
             <li>
-                <strong>Qué</strong>: ¿El resultado? Productos exitosos, equipos
-                alineados y procesos donde el negocio y el código no solo
-                coexisten, sino que avanzan juntos.
+                <strong class="text-lg font-semibold">Qué:</strong>
+                <span class="text-lg"
+                    >¿El resultado? Productos exitosos, equipos alineados y
+                    procesos donde el negocio y el código no solo coexisten,
+                    sino que avanzan juntos.</span
+                >
             </li>
         </ul>
     </article>
