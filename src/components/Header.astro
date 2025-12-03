@@ -1,12 +1,31 @@
 ---
 const { lang = "en" } = Astro.props;
 
+const translations = {
+  en: {
+    home: "Home",
+    philosophy: "Philosophy",
+    resume: "Resume",
+    projects: "Projects",
+    blog: "Blog",
+  },
+  es: {
+    home: "Inicio",
+    philosophy: "Filosofía",
+    resume: "Currículum",
+    projects: "Proyectos",
+    blog: "Blog",
+  },
+};
+
+const t = translations[lang];
+
 const links = [
-  { href: `/${lang}`, label: "Home" },
-  { href: `/${lang}/philosophy`, label: "Philosophy" },
-  { href: `/${lang}/resume`, label: "Resume" },
-  { href: `/${lang}/projects`, label: "Projects" },
-  { href: "https://www.codigoergosum.com", label: "Blog ↗" },
+  { href: `/${lang}`, label: t.home },
+  { href: `/${lang}/philosophy`, label: t.philosophy },
+  { href: `/${lang}/resume`, label: t.resume },
+  { href: `/${lang}/projects`, label: t.projects },
+  { href: "https://www.codigoergosum.com", label: `${t.blog} ↗` },
 ];
 
 const otherLang = lang === "en" ? "es" : "en";
