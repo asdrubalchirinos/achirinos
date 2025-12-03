@@ -1,6 +1,6 @@
 ---
 const year = new Date().getFullYear();
-const { lang = "en" } = Astro.props;
+const { lang = "en" } = Astro.props as { lang?: "en" | "es" };
 
 const translations = {
     en: {
