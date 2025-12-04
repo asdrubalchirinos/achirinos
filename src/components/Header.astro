@@ -20,18 +20,36 @@ const translations = {
 
 const t = translations[lang];
 
+const homeHref = lang === "en" ? "/en" : "/";
+
 const links = [
-  { href: `/${lang}`, label: t.home },
-  { href: `/${lang}/philosophy`, label: t.philosophy },
-  { href: `/${lang}/resume`, label: t.resume },
-  { href: `/${lang}/projects`, label: t.projects },
+  { href: homeHref, label: t.home },
+  { href: `/${lang === "en" ? "en" : "es"}/philosophy`, label: t.philosophy },
+  { href: `/${lang === "en" ? "en" : "es"}/resume`, label: t.resume },
+  { href: `/${lang === "en" ? "en" : "es"}/projects`, label: t.projects },
   { href: "https://www.codigoergosum.com", label: `${t.blog} ↗` },
 ];
 
 const otherLang = lang === "en" ? "es" : "en";
 const otherLangLabel = lang === "en" ? "ES" : "EN";
 const currentPath = Astro.url.pathname;
-const otherLangPath = currentPath.replace(`/${lang}`, `/${otherLang}`);
+
+let otherLangPath;
+if (lang === "en") {
+  // English -> Spanish
+  if (currentPath === "/en" || currentPath === "/en/") {
+    otherLangPath = "/";
+  } else {
+    otherLangPath = currentPath.replace(/^\/en/, "/es");
+  }
+} else {
+  // Spanish -> English
+  if (currentPath === "/" || currentPath === "/es" || currentPath === "/es/") {
+    otherLangPath = "/en";
+  } else {
+    otherLangPath = currentPath.replace(/^\/es/, "/en");
+  }
+}
 ---
 
 <header class="flex justify-between items-center py-4">

@@ -27,21 +27,21 @@ const t = translations[lang];
     <div class="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div class="flex flex-col space-y-4">
             <a
-                href={`/${lang}`}
+                href={lang === "en" ? "/en" : "/"}
                 class="text-gray-500 hover:text-gray-600 transition">{t.home}</a
             >
             <a
-                href={`/${lang}/philosophy`}
+                href={`/${lang === "en" ? "en" : "es"}/philosophy`}
                 class="text-gray-500 hover:text-gray-600 transition"
                 >{t.philosophy}</a
             >
             <a
-                href={`/${lang}/resume`}
+                href={`/${lang === "en" ? "en" : "es"}/resume`}
                 class="text-gray-500 hover:text-gray-600 transition"
                 >{t.resume}</a
             >
             <a
-                href={`/${lang}/projects`}
+                href={`/${lang === "en" ? "en" : "es"}/projects`}
                 class="text-gray-500 hover:text-gray-600 transition"
                 >{t.projects}</a
             >
