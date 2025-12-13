@@ -59,6 +59,12 @@ const socialImageURL = new URL(image, Astro.site);
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={socialImageURL} />
+
+        <!-- Analytics -->
+        <script
+            data-goatcounter="https://achirinos.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"></script>
     </head>
     <body
         class="bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto"
