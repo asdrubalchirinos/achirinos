@@ -5,6 +5,7 @@ const translations = {
   en: {
     home: "Home",
     philosophy: "Philosophy",
+    personalSoftware: "Personal Software",
     resume: "Resume",
     projects: "Projects",
     blog: "Blog",
@@ -13,6 +14,7 @@ const translations = {
   es: {
     home: "Inicio",
     philosophy: "Filosofía",
+    personalSoftware: "Personal Software",
     resume: "Currículum",
     projects: "Proyectos",
     blog: "Blog",
@@ -27,6 +29,10 @@ const homeHref = lang === "en" ? "/en" : "/";
 const links = [
   { href: homeHref, label: t.home },
   { href: `/${lang === "en" ? "en" : "es"}/philosophy`, label: t.philosophy },
+  {
+    href: `/${lang === "en" ? "en" : "es"}/personal-software`,
+    label: t.personalSoftware,
+  },
   { href: `/${lang === "en" ? "en" : "es"}/resume`, label: t.resume },
   { href: `/${lang === "en" ? "en" : "es"}/projects`, label: t.projects },
   { href: "https://www.codigoergosum.com", label: `${t.blog} ↗` },
