@@ -6,12 +6,14 @@ const translations = {
     en: {
         home: "Home",
         philosophy: "Philosophy",
+        personalSoftware: "Personal Software",
         resume: "Resume",
         projects: "Projects",
     },
     es: {
         home: "Inicio",
         philosophy: "Filosofía",
+        personalSoftware: "Personal Software",
         resume: "Currículum",
         projects: "Proyectos",
     },
@@ -34,6 +36,11 @@ const t = translations[lang];
                 href={`/${lang === "en" ? "en" : "es"}/philosophy`}
                 class="text-gray-500 hover:text-gray-600 transition"
                 >{t.philosophy}</a
+            >
+            <a
+                href={`/${lang === "en" ? "en" : "es"}/personal-software`}
+                class="text-gray-500 hover:text-gray-600 transition"
+                >{t.personalSoftware}</a
             >
             <a
                 href={`/${lang === "en" ? "en" : "es"}/resume`}
