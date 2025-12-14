@@ -16,7 +16,9 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-    <h1 class="title font-medium text-2xl tracking-tighter max-w-[650px] mb-2">
+    <h1
+        class="title font-medium text-2xl tracking-tighter max-w-[650px] mb-2 lowercase"
+    >
         {post.data.title}
     </h1>
     <div
