@@ -1,8 +1,21 @@
 export const SITE_NAME = "Asdrúbal Chirinos";
-export const TWITTER_CREATOR = "@achirinos";
+export const SITE_URL = "https://achirinos.com/";
+export const TWITTER_HANDLE = "@achirinos";
+export const THEME_COLOR = "#111827";
 export const DEFAULT_OG_IMAGE = "/og-image.png";
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
+
+export const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+    sameAs: [
+        "https://x.com/achirinos",
+        "https://codigoergosum.com",
+    ],
+};
 
 export type Lang = "es" | "en";
 
