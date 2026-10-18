@@ -1,13 +1,15 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { seo } from "../../../seo";
 
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const meta = seo.blog.en;
 ---
 
-<Layout title="Writing">
+<Layout {...meta} lang="en">
     <h1 class="font-medium text-2xl mb-8 tracking-tighter lowercase">
         Read My Writing
     </h1>

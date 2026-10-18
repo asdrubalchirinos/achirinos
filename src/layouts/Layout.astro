@@ -2,26 +2,54 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import {
+    DEFAULT_OG_IMAGE,
+    OG_IMAGE_HEIGHT,
+    OG_IMAGE_WIDTH,
+    SITE_NAME,
+    TWITTER_CREATOR,
+} from "../seo";
 
 interface Props {
     title?: string;
     description?: string;
     lang?: string;
     image?: string;
+    imageAlt?: string;
 }
 
+const defaultDescription = {
+    en: "Vision Architect. I connect dreamers and doers to turn bold ideas into reality.",
+    es: "Arquitecto de Visión. Conecto a quienes sueñan con quienes hacen para convertir ideas audaces en realidad.",
+};
+
 const {
-    title = "Asdrúbal Chirinos",
-    description = "Vision Architect | Bridging Business and Code for Success.",
+    title = SITE_NAME,
+    description,
     lang = "en",
-    image = "/og-image.png",
+    image = DEFAULT_OG_IMAGE,
+    imageAlt,
 } = Astro.props;
 
+const pageLang = lang === "es" ? "es" : "en";
+const pageDescription = description ?? defaultDescription[pageLang];
+
+// Home stays "Asdrúbal Chirinos". Other pages become "Filosofía | Asdrúbal Chirinos",
+// never "Filosofía | Filosofía".
+const pageTitle =
+    title === SITE_NAME || title.includes(SITE_NAME)
+        ? title
+        : `${title} | ${SITE_NAME}`;
+
 const socialImageURL = new URL(image, Astro.site);
+const socialImageAlt = imageAlt ?? pageTitle;
+const usesDefaultImage = image === DEFAULT_OG_IMAGE;
+const imageWidth = usesDefaultImage ? 1024 : OG_IMAGE_WIDTH;
+const imageHeight = usesDefaultImage ? 1024 : OG_IMAGE_HEIGHT;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={pageLang}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -42,23 +70,27 @@ const socialImageURL = new URL(image, Astro.site);
         <meta name="generator" content={Astro.generator} />
 
         <!-- Primary Meta Tags -->
-        <title>{title}</title>
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
+        <title>{pageTitle}</title>
+        <meta name="title" content={pageTitle} />
+        <meta name="description" content={pageDescription} />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content={Astro.url} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={socialImageURL} />
+        <meta property="og:image:width" content={String(imageWidth)} />
+        <meta property="og:image:height" content={String(imageHeight)} />
+        <meta property="og:image:alt" content={socialImageAlt} />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={Astro.url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="twitter:description" content={pageDescription} />
         <meta property="twitter:image" content={socialImageURL} />
+        <meta property="twitter:creator" content={TWITTER_CREATOR} />
 
         <!-- Analytics -->
         <script
@@ -70,9 +102,9 @@ const socialImageURL = new URL(image, Astro.site);
         class="bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto"
     >
         <main class="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-            <Header lang={lang} />
+            <Header lang={pageLang} />
             <slot />
-            <Footer lang={lang} />
+            <Footer lang={pageLang} />
         </main>
     </body>
 </html>
