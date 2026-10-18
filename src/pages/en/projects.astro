@@ -1,8 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { seo } from "../../seo";
+
+const meta = seo.projects.en;
 ---
 
-<Layout title="Projects">
+<Layout {...meta} lang="en">
     <h1 class="font-bold text-3xl mb-12 tracking-tight lowercase">Projects</h1>
     <div class="grid grid-cols-1 gap-6">
         <a

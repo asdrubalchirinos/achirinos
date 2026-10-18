@@ -1,8 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { seo } from "../../seo";
+
+const meta = seo.philosophy.es;
 ---
 
-<Layout title="Filosofía" lang="es">
+<Layout {...meta} lang="es">
     <h1 class="font-bold text-3xl mb-12 tracking-tight lowercase">Filosofía</h1>
     <article class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
         <p class="text-lg leading-relaxed mb-6">
