@@ -39,7 +39,7 @@ export const seo = {
             title: SITE_NAME,
             description:
                 "Vision Architect. I connect dreamers and doers to turn bold ideas into reality.",
-            image: "/og-home-light.png",
+            image: "/og-home-en.png",
             imageAlt: "Asdrúbal Chirinos, Vision Architect",
         },
     },
@@ -55,7 +55,7 @@ export const seo = {
             title: "Philosophy",
             description:
                 "My mission is to build bridges between those who dream and those who do, connecting vision and execution.",
-            image: "/og-philosophy.png",
+            image: "/og-philosophy-en.png",
             imageAlt: "Philosophy: bridges between those who dream and those who do",
         },
     },
@@ -71,7 +71,7 @@ export const seo = {
             title: "Personal Software",
             description:
                 "A movement that gives creative control back to people: software made by those who live the problem.",
-            image: "/og-personal-software.png",
+            image: "/og-personal-software-en.png",
             imageAlt: "Personal Software: control, intention, and freedom to create",
         },
     },
@@ -87,7 +87,7 @@ export const seo = {
             title: "Resume",
             description:
                 "Over 30 years bridging business vision and technical execution as a solution architect.",
-            image: "/og-resume.png",
+            image: "/og-resume-en.png",
             imageAlt: "Resume: over 30 years of technology in service of the business",
         },
     },
@@ -103,7 +103,7 @@ export const seo = {
             title: "Projects",
             description:
                 "Personal projects: Código Ergo Sum and P1 Express App, a lightweight offline-first tool.",
-            image: "/og-projects.png",
+            image: "/og-projects-en.png",
             imageAlt: "Projects: ideas turned into product",
         },
     },
@@ -119,7 +119,7 @@ export const seo = {
             title: "P1 Express App",
             description:
                 "A minimal, offline-first P1.express app for planning, doing, and reflecting without distractions.",
-            image: "/og-p1-express.png",
+            image: "/og-p1-express-en.png",
             imageAlt: "P1 Express: plan, do, reflect",
         },
     },
