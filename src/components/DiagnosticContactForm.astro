@@ -1,0 +1,147 @@
+---
+interface Props {
+    lang: "en" | "es";
+}
+
+const { lang } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "";
+
+const copy = lang === "es"
+    ? {
+        title: "Empecemos por entender el problema.",
+        intro: "Cuéntame brevemente qué está ocurriendo. Te diré con honestidad si el Diagnóstico Express es adecuado para tu caso.",
+        name: "Nombre",
+        email: "Correo electrónico",
+        company: "Empresa o proyecto",
+        url: "URL del sitio o producto",
+        challenge: "¿Qué está ocurriendo con tu proyecto?",
+        challengeHint: "Cuéntame el reto principal, qué han intentado y qué les gustaría cambiar.",
+        consent: "Usaré tus datos únicamente para responder a esta consulta.",
+        submit: "Enviar consulta",
+        sending: "Enviando…",
+        success: "Gracias, recibí tu consulta. Te responderé pronto.",
+        error: "No fue posible enviar la consulta. Inténtalo de nuevo más tarde.",
+        unavailable: "El formulario está temporalmente no disponible. Inténtalo de nuevo más tarde.",
+    }
+    : {
+        title: "Start by understanding the problem.",
+        intro: "Tell me briefly what is happening. I will tell you honestly whether the Express Diagnostic is right for your situation.",
+        name: "Name",
+        email: "Email",
+        company: "Company or project",
+        url: "Website or product URL",
+        challenge: "What is happening with your project?",
+        challengeHint: "Tell me the main challenge, what you have tried, and what you would like to change.",
+        consent: "I will use your details only to respond to this enquiry.",
+        submit: "Send enquiry",
+        sending: "Sending…",
+        success: "Thank you, I received your enquiry. I will get back to you soon.",
+        error: "Your enquiry could not be sent. Please try again later.",
+        unavailable: "The form is temporarily unavailable. Please try again later.",
+    };
+---
+
+<section id="consulta" class="mt-16 pt-10 border-t border-neutral-200 dark:border-neutral-800">
+    <h2 class="font-bold text-2xl mb-4">{copy.title}</h2>
+    <p class="text-lg leading-relaxed mb-8">{copy.intro}</p>
+
+    <form
+        action={endpoint || undefined}
+        method="POST"
+        data-diagnostic-form
+        data-form-endpoint={endpoint}
+        data-success-message={copy.success}
+        data-error-message={copy.error}
+        data-unavailable-message={copy.unavailable}
+        data-sending-label={copy.sending}
+        data-submit-label={copy.submit}
+        class="not-prose space-y-5"
+    >
+        <div class="hidden" aria-hidden="true">
+            <label for="diagnostic-website">Website</label>
+            <input id="diagnostic-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div>
+            <label for="diagnostic-name" class="block text-sm font-semibold mb-2">{copy.name}</label>
+            <input id="diagnostic-name" name="name" type="text" autocomplete="name" required class="w-full rounded-md border border-neutral-300 bg-white px-3 py-3 text-neutral-900 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white" />
+        </div>
+
+        <div>
+            <label for="diagnostic-email" class="block text-sm font-semibold mb-2">{copy.email}</label>
+            <input id="diagnostic-email" name="email" type="email" autocomplete="email" required class="w-full rounded-md border border-neutral-300 bg-white px-3 py-3 text-neutral-900 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white" />
+        </div>
+
+        <div>
+            <label for="diagnostic-company" class="block text-sm font-semibold mb-2">{copy.company} <span class="font-normal text-neutral-500">({lang === "es" ? "opcional" : "optional"})</span></label>
+            <input id="diagnostic-company" name="company" type="text" autocomplete="organization" class="w-full rounded-md border border-neutral-300 bg-white px-3 py-3 text-neutral-900 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white" />
+        </div>
+
+        <div>
+            <label for="diagnostic-url" class="block text-sm font-semibold mb-2">{copy.url} <span class="font-normal text-neutral-500">({lang === "es" ? "opcional" : "optional"})</span></label>
+            <input id="diagnostic-url" name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://" class="w-full rounded-md border border-neutral-300 bg-white px-3 py-3 text-neutral-900 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white" />
+        </div>
+
+        <div>
+            <label for="diagnostic-challenge" class="block text-sm font-semibold mb-2">{copy.challenge}</label>
+            <p id="diagnostic-challenge-hint" class="text-sm text-neutral-600 dark:text-neutral-400 mb-2">{copy.challengeHint}</p>
+            <textarea id="diagnostic-challenge" name="challenge" rows="6" required aria-describedby="diagnostic-challenge-hint" class="w-full resize-y rounded-md border border-neutral-300 bg-white px-3 py-3 text-neutral-900 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:text-white dark:focus:border-white dark:focus:ring-white"></textarea>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">{copy.consent}</p>
+        <button type="submit" class="inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-base font-semibold text-white hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors">{copy.submit}</button>
+        <p data-form-status class="hidden text-sm" role="status" aria-live="polite"></p>
+    </form>
+</section>
+
+<script>
+    document.querySelectorAll<HTMLFormElement>("[data-diagnostic-form]").forEach((form) => {
+        const status = form.querySelector<HTMLElement>("[data-form-status]");
+        const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const endpoint = form.dataset.formEndpoint;
+            if (!endpoint) {
+                if (status) {
+                    status.textContent = form.dataset.unavailableMessage ?? "";
+                    status.className = "text-sm text-red-700 dark:text-red-400";
+                }
+                return;
+            }
+
+            if (button) {
+                button.disabled = true;
+                button.textContent = form.dataset.sendingLabel ?? "";
+            }
+            if (status) status.className = "hidden text-sm";
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { Accept: "application/json" },
+                });
+
+                if (!response.ok) throw new Error("Form submission failed");
+
+                form.reset();
+                if (status) {
+                    status.textContent = form.dataset.successMessage ?? "";
+                    status.className = "text-sm text-emerald-700 dark:text-emerald-400";
+                }
+            } catch {
+                if (status) {
+                    status.textContent = form.dataset.errorMessage ?? "";
+                    status.className = "text-sm text-red-700 dark:text-red-400";
+                }
+            } finally {
+                if (button) {
+                    button.disabled = false;
+                    button.textContent = form.dataset.submitLabel ?? "";
+                }
+            }
+        });
+    });
+</script>

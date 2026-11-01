@@ -7,6 +7,7 @@ const translations = {
         home: "Home",
         philosophy: "Philosophy",
         personalSoftware: "Personal Software",
+        diagnosis: "90:90",
         resume: "Resume",
         projects: "Projects",
     },
@@ -14,6 +15,7 @@ const translations = {
         home: "Inicio",
         philosophy: "Filosofía",
         personalSoftware: "Personal Software",
+        diagnosis: "90:90",
         resume: "Currículum",
         projects: "Proyectos",
     },
@@ -41,6 +43,11 @@ const t = translations[lang];
                 href={`/${lang === "en" ? "en" : "es"}/personal-software`}
                 class="text-gray-500 hover:text-gray-600 transition"
                 >{t.personalSoftware}</a
+            >
+            <a
+                href={`/${lang === "en" ? "en" : "es"}/90-90`}
+                class="text-gray-500 hover:text-gray-600 transition"
+                >{t.diagnosis}</a
             >
             <a
                 href={`/${lang === "en" ? "en" : "es"}/resume`}

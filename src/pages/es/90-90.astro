@@ -1,0 +1,89 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DiagnosticContactForm from "../../components/DiagnosticContactForm.astro";
+---
+
+<Layout
+    title="90:90 Diagnóstico Express | Asdrúbal Chirinos"
+    description="En 90 minutos ordenamos el problema de tu proyecto web. En pocos días recibes una hoja de ruta para los próximos 90."
+    lang="es"
+>
+    <article class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        <p class="text-sm font-semibold tracking-[0.18em] text-neutral-500 dark:text-neutral-400 uppercase mb-4">
+            Diagnóstico Express
+        </p>
+        <h1 class="font-bold text-4xl md:text-5xl tracking-tight leading-tight mb-6">
+            90 minutos para ordenar el presente. 90 días para avanzar.
+        </h1>
+        <p class="text-xl md:text-2xl leading-relaxed text-neutral-600 dark:text-neutral-400 mb-10">
+            Una conversación de trabajo para convertir un problema web confuso
+            en prioridades claras y un plan accionable.
+        </p>
+
+        <a
+            href="#consulta"
+            class="no-underline inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-base font-semibold text-white hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors"
+        >
+            Cuéntame qué está pasando con tu proyecto <span class="ml-2" aria-hidden="true">→</span>
+        </a>
+
+        <section class="mt-16">
+            <h2 class="font-bold text-2xl mt-12 mb-5">¿Qué es?</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                El Diagnóstico Express es una sesión de 90 minutos por videollamada
+                para entender qué está frenando tu sitio, producto o equipo. No
+                empieza por una solución predeterminada: primero buscamos el
+                problema que realmente importa para tu negocio.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+                En 2 o 3 días hábiles recibes un documento con los objetivos,
+                los problemas principales, prioridades y una hoja de ruta para
+                los próximos tres meses. Tu equipo puede usarlo para avanzar,
+                conmigo o de forma independiente.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="font-bold text-2xl mt-14 mb-5">¿Para quién es?</h2>
+            <p class="text-lg leading-relaxed mb-5">
+                Para empresas y equipos con un sitio o producto web en marcha,
+                y una persona que puede tomar decisiones. Es especialmente útil
+                si reconoces alguna de estas situaciones:
+            </p>
+            <ul class="list-none pl-0 space-y-4 mb-6">
+                <li class="pl-4 border-l-4 border-neutral-300 dark:border-neutral-700">El equipo o proveedor avanza más lento de lo esperado.</li>
+                <li class="pl-4 border-l-4 border-neutral-300 dark:border-neutral-700">Hay prioridades cruzadas y nadie tiene claro qué resolver primero.</li>
+                <li class="pl-4 border-l-4 border-neutral-300 dark:border-neutral-700">El sitio es lento, frágil o difícil de mantener.</li>
+                <li class="pl-4 border-l-4 border-neutral-300 dark:border-neutral-700">Se acerca un lanzamiento y hace falta ordenar el plan.</li>
+            </ul>
+            <p class="text-lg leading-relaxed mb-6">
+                Funciona mejor cuando hay un problema concreto que vale la pena
+                resolver, y disposición para mirar más allá de los síntomas.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="font-bold text-2xl mt-14 mb-5">¿Qué recibes?</h2>
+            <ul class="space-y-4 mb-6">
+                <li>Una lectura compartida de la situación actual.</li>
+                <li>Los tres problemas que requieren atención primero.</li>
+                <li>Acciones rápidas y prioridades para no dispersar al equipo.</li>
+                <li>Una hoja de ruta de 90 días, organizada por mes.</li>
+                <li>Una llamada breve de revisión, si hace falta aclarar el plan.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="font-bold text-2xl mt-14 mb-5">Cómo contratarlo</h2>
+            <ol class="list-none pl-0 space-y-7 mb-6">
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">01</span><div><strong class="block">Cuéntame tu contexto</strong><span>Escríbeme qué está ocurriendo, qué has intentado y cuál es el sitio o producto involucrado.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">02</span><div><strong class="block">Confirmamos el encaje</strong><span>Revisamos brevemente si este diagnóstico es la mejor forma de ayudarte.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">03</span><div><strong class="block">Reservamos la sesión</strong><span>Elegimos un horario y confirmas la reserva. Recibirás los detalles y un cuestionario breve de preparación.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">04</span><div><strong class="block">Trabajamos durante 90 minutos</strong><span>Revisamos propósito, prioridades, equipo y contexto técnico para encontrar el núcleo del problema.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">05</span><div><strong class="block">Recibes tu hoja de ruta</strong><span>En 2 o 3 días hábiles tendrás un plan claro para los siguientes 90 días.</span></div></li>
+            </ol>
+        </section>
+
+        <DiagnosticContactForm lang="es" />
+    </article>
+</Layout>
