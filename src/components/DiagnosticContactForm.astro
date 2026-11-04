@@ -5,6 +5,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "";
+const qualification = lang === "es"
+    ? "El primer contacto es para entender tu caso y confirmar si el diagnóstico es adecuado. El Diagnóstico Express es un servicio profesional de pago."
+    : "";
 
 const copy = lang === "es"
     ? {
@@ -15,7 +18,7 @@ const copy = lang === "es"
         company: "Empresa o proyecto",
         url: "URL del sitio o producto",
         challenge: "¿Qué está ocurriendo con tu proyecto?",
-        challengeHint: "Cuéntame el reto principal, qué han intentado y qué les gustaría cambiar.",
+        challengeHint: "Cuéntame cuál es el problema que buscas resolver, qué has intentado y qué quieres conseguir. Si hiciste un prototipo con IA, explícame qué has validado y qué necesitas para avanzar.",
         consent: "Usaré tus datos únicamente para responder a esta consulta.",
         submit: "Enviar consulta",
         sending: "Enviando…",
@@ -44,6 +47,9 @@ const copy = lang === "es"
 <section id="consulta" class="mt-16 pt-10 border-t border-neutral-200 dark:border-neutral-800">
     <h2 class="font-bold text-2xl mb-4">{copy.title}</h2>
     <p class="text-lg leading-relaxed mb-8">{copy.intro}</p>
+    {qualification && (
+        <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mb-8">{qualification}</p>
+    )}
 
     <form
         action={endpoint || undefined}
