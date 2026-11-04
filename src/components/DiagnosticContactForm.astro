@@ -7,7 +7,7 @@ const { lang } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "";
 const qualification = lang === "es"
     ? "El primer contacto es para entender tu caso y confirmar si el diagnóstico es adecuado. El Diagnóstico Express es un servicio profesional de pago."
-    : "";
+    : "This first contact is to understand your situation and confirm whether the diagnostic is appropriate. The Express Diagnostic is a paid professional service.";
 
 const copy = lang === "es"
     ? {
@@ -34,7 +34,7 @@ const copy = lang === "es"
         company: "Company or project",
         url: "Website or product URL",
         challenge: "What is happening with your project?",
-        challengeHint: "Tell me the main challenge, what you have tried, and what you would like to change.",
+        challengeHint: "Tell me which problem you want to solve, what you have tried, and what you want to achieve. If you built an AI prototype, explain what you have validated and what you need to move forward.",
         consent: "I will use your details only to respond to this enquiry.",
         submit: "Send enquiry",
         sending: "Sending…",
