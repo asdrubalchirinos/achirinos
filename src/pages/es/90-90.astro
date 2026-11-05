@@ -1,13 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import DiagnosticContactForm from "../../components/DiagnosticContactForm.astro";
+import { seo } from "../../seo";
+
+const meta = seo.ninetyNinety.es;
 ---
 
-<Layout
-    title="90:90 Diagnóstico Express | Asdrúbal Chirinos"
-    description="En 90 minutos ordenamos el problema de tu proyecto web. En pocos días recibes una hoja de ruta para los próximos 90."
-    lang="es"
->
+<Layout {...meta} lang="es">
     <article class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
         <p class="text-sm font-semibold tracking-[0.18em] text-neutral-500 dark:text-neutral-400 uppercase mb-4">
             Diagnóstico Express
