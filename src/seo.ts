@@ -123,6 +123,22 @@ export const seo = {
             imageAlt: "P1 Express: plan, do, reflect",
         },
     },
+    ninetyNinety: {
+        es: {
+            title: "90:90 Diagnóstico Express",
+            description:
+                "En 90 minutos ordenamos el problema de tu proyecto web. En pocos días recibes una hoja de ruta para los próximos 90.",
+            image: "/og-90-90.png",
+            imageAlt: "90:90 Diagnóstico Express: de prototipo con IA a producto real",
+        },
+        en: {
+            title: "90:90 Express Diagnostic",
+            description:
+                "In 90 minutes, clarify what is holding back your web project. A practical 90-day roadmap follows within a few days.",
+            image: "/og-90-90-en.png",
+            imageAlt: "90:90 Express Diagnostic: from AI prototype to a real product",
+        },
+    },
     blog: {
         es: {
             title: "Escritos",
