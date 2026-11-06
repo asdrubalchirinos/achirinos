@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import DiagnosticContactForm from "../../components/DiagnosticContactForm.astro";
 import { seo } from "../../seo";
+import DiagnosticInvestment from "../../components/DiagnosticInvestment.astro";
 
 const meta = seo.ninetyNinety.en;
 ---
@@ -18,7 +19,7 @@ const meta = seo.ninetyNinety.en;
             A working conversation that turns a confusing web-project problem into clear priorities and an actionable plan.
         </p>
         <a href="#consulta" class="no-underline inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-base font-semibold text-white hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors">
-            Tell me what is happening with your project <span class="ml-2" aria-hidden="true">→</span>
+            Tell me what you need to solve <span class="ml-2" aria-hidden="true">→</span>
         </a>
 
         <section class="mt-16">
@@ -50,14 +51,16 @@ const meta = seo.ninetyNinety.en;
             </ul>
         </section>
 
+        <DiagnosticInvestment lang="en" />
+
         <section>
-            <h2 class="font-bold text-2xl mt-14 mb-5">How to engage</h2>
+            <h2 class="font-bold text-2xl mt-14 mb-5">How it works</h2>
             <ol class="list-none pl-0 space-y-7 mb-6">
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">01</span><div><strong class="block">Tell me your context</strong><span>Write to me about what is happening, what you have tried, and the site or product involved.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">02</span><div><strong class="block">We confirm the fit</strong><span>We briefly review whether this diagnostic is the right way to help.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">03</span><div><strong class="block">We book the session</strong><span>We choose a time and you confirm the booking. You receive the details and a short preparation questionnaire.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">04</span><div><strong class="block">We work for 90 minutes</strong><span>We examine purpose, priorities, team, and technical context to find the core of the issue.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">05</span><div><strong class="block">You receive your roadmap</strong><span>Within 2–3 business days, you have a clear plan for the next 90 days.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">01</span><div><strong class="block">Tell me about your situation</strong><span>Tell me what's happening, what you've tried so far, and which website or product is involved.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">02</span><div><strong class="block">Let's talk for 15 minutes, free of charge</strong><span>We'll have a brief call to get to know each other, understand your situation, and decide if moving forward with the diagnostic makes sense for both of us.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">03</span><div><strong class="block">We confirm your booking</strong><span>If we agree to move forward, we'll schedule your 90-minute session. You'll confirm your booking and receive a short preparation questionnaire.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">04</span><div><strong class="block">We work together for 90 minutes</strong><span>We'll review your goals, priorities, team, and technical context to identify the problem that really needs solving.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">05</span><div><strong class="block">You receive your roadmap</strong><span>Within 2–3 business days, you'll receive a clear, actionable plan for the next 90 days.</span></div></li>
             </ol>
         </section>
 

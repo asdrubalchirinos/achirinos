@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import DiagnosticContactForm from "../../components/DiagnosticContactForm.astro";
 import { seo } from "../../seo";
+import DiagnosticInvestment from "../../components/DiagnosticInvestment.astro";
 
 const meta = seo.ninetyNinety.es;
 ---
@@ -23,7 +24,7 @@ const meta = seo.ninetyNinety.es;
             href="#consulta"
             class="no-underline inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-base font-semibold text-white hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors"
         >
-            Cuéntame qué está pasando con tu proyecto <span class="ml-2" aria-hidden="true">→</span>
+            Cuéntame qué necesitas resolver <span class="ml-2" aria-hidden="true">→</span>
         </a>
 
         <section class="mt-16">
@@ -74,14 +75,16 @@ const meta = seo.ninetyNinety.es;
             </ul>
         </section>
 
+        <DiagnosticInvestment lang="es" />
+
         <section>
-            <h2 class="font-bold text-2xl mt-14 mb-5">Cómo contratarlo</h2>
+            <h2 class="font-bold text-2xl mt-14 mb-5">Cómo funciona</h2>
             <ol class="list-none pl-0 space-y-7 mb-6">
                 <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">01</span><div><strong class="block">Cuéntame tu contexto</strong><span>Escríbeme qué está ocurriendo, qué has intentado y cuál es el sitio o producto involucrado.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">02</span><div><strong class="block">Confirmamos el encaje</strong><span>Revisamos brevemente si este diagnóstico es la mejor forma de ayudarte.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">03</span><div><strong class="block">Reservamos la sesión</strong><span>Elegimos un horario y confirmas la reserva. Recibirás los detalles y un cuestionario breve de preparación.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">04</span><div><strong class="block">Trabajamos durante 90 minutos</strong><span>Revisamos propósito, prioridades, equipo y contexto técnico para encontrar el núcleo del problema.</span></div></li>
-                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">05</span><div><strong class="block">Recibes tu hoja de ruta</strong><span>En 2 o 3 días hábiles tendrás un plan claro para los siguientes 90 días.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">02</span><div><strong class="block">Conversemos 15 minutos, sin costo</strong><span>Agendamos una breve llamada para conocernos, entender tu situación y evaluar si tiene sentido para ambos avanzar con el diagnóstico.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">03</span><div><strong class="block">Confirmamos la contratación</strong><span>Si decidimos avanzar, acordamos una fecha para la sesión de 90 minutos. Confirmas tu reserva y recibes un breve cuestionario de preparación.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">04</span><div><strong class="block">Trabajamos durante 90 minutos</strong><span>Revisamos propósito, prioridades, equipo y contexto técnico para identificar el problema que realmente necesitamos resolver.</span></div></li>
+                <li class="flex gap-4"><span class="font-bold text-neutral-400" aria-hidden="true">05</span><div><strong class="block">Recibes tu hoja de ruta</strong><span>En 2 o 3 días hábiles recibirás un plan claro y práctico para los siguientes 90 días.</span></div></li>
             </ol>
         </section>
 

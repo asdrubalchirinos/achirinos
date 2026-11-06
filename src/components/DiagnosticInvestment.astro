@@ -1,0 +1,32 @@
+---
+interface Props {
+    lang: "en" | "es";
+}
+
+const { lang } = Astro.props;
+const price = "US$250";
+
+const copy = lang === "es"
+    ? {
+        title: "Inversión",
+        fee: "Pago único por el Diagnóstico Express 90:90.",
+        description: "Incluye una sesión de trabajo de 90 minutos, el análisis de tu situación y una hoja de ruta con prioridades y acciones para los próximos 90 días.",
+        question: "¿No sabes si es lo que necesitas?",
+        answer: "Conversemos 15 minutos, sin costo, para evaluar si tiene sentido trabajar juntos.",
+    }
+    : {
+        title: "Investment",
+        fee: "One-time fee for the Express Diagnostic 90:90.",
+        description: "Includes a 90-minute working session, an assessment of your situation, and a roadmap with priorities and actions for the next 90 days.",
+        question: "Not sure it's right for you?",
+        answer: "Let's have a free 15-minute call to see if working together makes sense.",
+    };
+---
+
+<section class="mt-14 mb-6 rounded-md border border-neutral-200 px-5 py-6 dark:border-neutral-800">
+    <h2 class="font-bold text-2xl mb-5">{copy.title}</h2>
+    <p class="text-3xl font-bold tracking-tight mb-2">{price}</p>
+    <p class="text-lg leading-relaxed mb-4">{copy.fee}</p>
+    <p class="text-lg leading-relaxed mb-6">{copy.description}</p>
+    <p class="text-lg leading-relaxed"><strong>{copy.question}</strong> {copy.answer}</p>
+</section>
