@@ -5,10 +5,11 @@ interface Props {
 
 const { lang } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "";
+const bookingUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gW4NcCkn04TNRvJnXexQTfM8l_-jX4OM9Ukr6DZTU33rNLZvMd3ZVyR9waFyxw9kqON1qyOfV";
 const copy = lang === "es"
     ? {
         title: "Empecemos por entender tu situación",
-        intro: "Cuéntame brevemente qué está ocurriendo y qué necesitas resolver. Revisaré tu consulta y, si considero que podemos aportar valor, te contactaré para coordinar una llamada de 15 minutos, sin costo. En esa conversación evaluaremos si tiene sentido para ambos avanzar con el Diagnóstico Express, que es un servicio profesional de pago.",
+        intro: "Cuéntame qué está ocurriendo con tu proyecto. Revisaré tu consulta y te contactaré para evaluar si tiene sentido conversar 15 minutos, sin costo y sin compromiso.",
         name: "Nombre",
         email: "Correo electrónico",
         company: "Empresa o proyecto",
@@ -18,13 +19,14 @@ const copy = lang === "es"
         consent: "Usaré tus datos únicamente para responder a esta consulta.",
         submit: "Enviar mi consulta",
         sending: "Enviando…",
-        success: "Gracias por contarme tu situación. Revisaré tu consulta y te contactaré para indicarte si tiene sentido coordinar una llamada gratuita de 15 minutos.",
+        success: "Gracias por contarme tu situación. Puedes elegir ahora un horario para una primera conversación gratuita de 15 minutos.",
+        book: "Elegir horario para la conversación",
         error: "No fue posible enviar la consulta. Inténtalo de nuevo más tarde.",
         unavailable: "El formulario está temporalmente no disponible. Inténtalo de nuevo más tarde.",
     }
     : {
         title: "Let's start with your situation",
-        intro: "Tell me briefly what's happening and what you need to solve. I'll review your enquiry and, if I believe there's a good fit, get in touch to arrange a free 15-minute call. During that conversation, we'll decide whether moving forward with the Express Diagnostic, a paid professional service, makes sense for both of us.",
+        intro: "Tell me what's happening with your project. I'll review your enquiry and get in touch to assess whether a free, no-obligation 15-minute conversation makes sense.",
         name: "Name",
         email: "Email",
         company: "Company or project",
@@ -34,7 +36,8 @@ const copy = lang === "es"
         consent: "I will use your details only to respond to this enquiry.",
         submit: "Send my enquiry",
         sending: "Sending…",
-        success: "Thanks for sharing your situation. I'll review your enquiry and get back to you about whether a free 15-minute call would be a useful next step.",
+        success: "Thanks for sharing your situation. You can now choose a time for a free 15-minute initial conversation.",
+        book: "Choose a time for the conversation",
         error: "Your enquiry could not be sent. Please try again later.",
         unavailable: "The form is temporarily unavailable. Please try again later.",
     };
@@ -89,6 +92,7 @@ const copy = lang === "es"
         <p class="text-sm text-neutral-600 dark:text-neutral-400">{copy.consent}</p>
         <button type="submit" class="inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-base font-semibold text-white hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors">{copy.submit}</button>
         <p data-form-status class="hidden text-sm" role="status" aria-live="polite"></p>
+        <a data-booking-link href={bookingUrl} target="_blank" rel="noopener noreferrer" class="hidden w-fit items-center rounded-md border border-neutral-900 px-5 py-3 text-base font-semibold text-neutral-900 hover:bg-neutral-100 dark:border-white dark:text-white dark:hover:bg-neutral-800 transition-colors">{copy.book}</a>
     </form>
 </section>
 
@@ -96,12 +100,14 @@ const copy = lang === "es"
     document.querySelectorAll<HTMLFormElement>("[data-diagnostic-form]").forEach((form) => {
         const status = form.querySelector<HTMLElement>("[data-form-status]");
         const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const bookingLink = form.querySelector<HTMLAnchorElement>("[data-booking-link]");
 
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
             const endpoint = form.dataset.formEndpoint;
             if (!endpoint) {
+                bookingLink?.classList.add("hidden");
                 if (status) {
                     status.textContent = form.dataset.unavailableMessage ?? "";
                     status.className = "text-sm text-red-700 dark:text-red-400";
@@ -114,6 +120,7 @@ const copy = lang === "es"
                 button.textContent = form.dataset.sendingLabel ?? "";
             }
             if (status) status.className = "hidden text-sm";
+            bookingLink?.classList.add("hidden");
 
             try {
                 const response = await fetch(endpoint, {
@@ -129,7 +136,9 @@ const copy = lang === "es"
                     status.textContent = form.dataset.successMessage ?? "";
                     status.className = "text-sm text-emerald-700 dark:text-emerald-400";
                 }
+                bookingLink?.classList.remove("hidden");
             } catch {
+                bookingLink?.classList.add("hidden");
                 if (status) {
                     status.textContent = form.dataset.errorMessage ?? "";
                     status.className = "text-sm text-red-700 dark:text-red-400";
